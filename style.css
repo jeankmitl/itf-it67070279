@@ -1,0 +1,101 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    position: relative;
+}
+
+body {
+    background-image: url(https://arknights.wiki.gg/images/7/79/Intertwining_Helixes.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    backface-visibility: visible;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    z-index: 1;
+}
+
+
+.topnav {
+    font-family: 'Space Mono', monospace;
+    background-color: #181717;
+    overflow: hidden;
+    font-weight: 400;
+    position: relative;
+    z-index: 2;
+}
+
+.topnav .logo {
+    height: 50px;
+    right: 16px;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.topnav a.contact:hover {
+    background-color: #f47f61;
+    color: #000000;
+}
+
+.topnav a.github:hover {
+    background-color: #e9c76a;
+    color: #000000;
+}
+
+.topnav a.active {
+    background-color: #e75151;
+    color: white;
+}
+
+.content{
+    font-family:'Space Mono', monospace;
+    font-weight: 1000;
+    font-size: xx-large;
+    text-align: center;
+    position: relative;
+    color:white;
+    z-index: 3;
+}
+.content2{
+    font-family:'Space Mono', monospace;
+    font-weight: 300;
+    font-size: medium;
+    text-align: center;
+    position: relative;
+    color:white;
+    z-index: 4;
+}
+.button-container {
+    margin-top: 20px;
+}
+.stupidbutton {
+    background-color: #272323;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    z-index: 4;
+    display: flex;
+}
+
+.stupidbutton:hover {
+    background-color: #f47f61;
+}
