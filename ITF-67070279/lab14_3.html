@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="body">
+    <div class="container">
+        <div id="profile-dis" class="profile">
+            <div class="notify">
+                <p>1</p>
+            </div>
+        </div>
+        <h1 class="bruhtext" id="username">Username, hello :></h1>
+    </div>
+
+    <div class="usernamebox">
+        <label>Set Username </label><input id="input" type="text"><button onclick="setName()">Confirm</button>
+    </div>
+
+    <div class="setprofilebox">
+        <label>Set Profile </label><input id="input-url" type="text"><button onclick="setting()">Confirm</button>
+    </div>
+
+    <label>Name:</label><input type="text">
+    <label>Phone Number:</label><input type="text">
+    <button onclick='addRow()'>Add</button>
+    <button onclick="saveCSV()">Export</button>
+    <table id="table">
+        <tr>
+            <th>name</th>
+            <th>phone</th>
+        </tr>
+    </table>
+
+    <script>
+        const name = document.getElementById("username");
+        const input = document.getElementById('input');
+        const profile = document.getElementById('profile-dis');
+        const inputUrl = document.getElementById("input-url");
+        const table = document.getElementById("table");
+
+        function setName(){
+            name.textContent = input.value + ', Hello!';
+            input.value = '';
+        }
+
+        function setting(){
+            profile.style.backgroundImage = "url(" + inputUrl.value + ')';
+        }
+        
+        function addRow(){
+            const row = document.createElement('tr');
+            const cell1 = document.createElement('td');
+            const cell2 = document.createElement('td');
+            cell1.textContent = 'Placeholder';
+            cell2.textContent = 'Placeholder';
+            row.appendChild(cell1);
+            row.appendChild(cell2);
+            table.appendChild(row);
+        }
+        function saveCSV() {
+        const csvContent = phonenumber.map(row => row.join(",")).join("\n"); // Convert array to CSV string
+        const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+        const link = document.createElement("a");
+        const url = URL.createObjectURL(blob);
+        link.setAttribute("href", url);
+        link.setAttribute("download", "data.csv");
+        link.style.visibility = "hidden";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        };
+    </script>
+</body>
+
+</body>
+</html>

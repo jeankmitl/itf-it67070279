@@ -1,0 +1,41 @@
+.body{
+    font-family: 'Martian Mono', Courier, monospace;
+    font-size: medium;
+    background-color: whitesmoke;
+}
+.profile{
+    width: 270px;
+    height: 270px;
+    background-image: url(https://th.bing.com/th/id/OIP.jQHKFUSwKe9JtsTRmnQk0wHaFj?rs=1&pid=ImgDetMain);
+    border-radius: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin: auto;
+    border: 10px solid white;
+}
+
+.notify{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items:  center;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    border: 5px solid white;
+}
+
+.usernamebox{
+    text-align: center;
+}
+.setprofilebox{
+    margin: auto;
+    text-align: center;
+}
+.bruhtext{
+    text-align: center;
+}
