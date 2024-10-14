@@ -1,5 +1,5 @@
 .body{
-    font-family: 'Martian Mono', Courier, monospace;
+    font-family: 'Inter', Courier, monospace;
     font-size: medium;
     background-color: whitesmoke;
     display: flex;
@@ -12,52 +12,52 @@
 }
 
 .profile{
-    width: 270px;
-    height: 270px;
-    background-image: url(https://th.bing.com/th/id/OIP.jQHKFUSwKe9JtsTRmnQk0wHaFj?rs=1&pid=ImgDetMain);
+    width: 140px;
+    height: 140px;
+    background-image: url(https://p16-va.lemon8cdn.com/tos-maliva-v-ac5634-us/ogFjQkAMIE8xaHAFeyVW7DEIeQfZknAfAPsFD2~tplv-tej9nj120t-origin.webp);
     background-size: cover;
     background-position: center;
     position: relative;
     margin: auto;
     border-radius: 500px;
     border: 5px solid white;
-    box-shadow: 2px 2px 5px rgb(179, 179, 179);
+    box-shadow: 4px 4px 12px rgb(179, 179, 179);
+    margin-top: -310px;
 }
 
 .backcontainer{
     width: 450px;
-    height: 600px;
+    height: 700px;
     background-color: white;
     display: flex;
     position: relative;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
+    border-radius: 75px;
+    box-shadow: 4px 4px 12px rgb(179, 179, 179);
 }
 
 .notify{
     color: white;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     background-color: #FF5151;
     display: flex;
     justify-content: center;
     align-items:  center;
     position: absolute;
-    bottom: 5px;
-    right: 5px;
+    bottom: -3px;
+    right: -3px;
     border-radius: 500px;
     box-shadow: 2px 2px 5px rgb(179, 179, 179);
 }
 
 .usernamebox{
+    margin-bottom: 10px;
     text-align: center;
 }
-.setprofilebox{
-    margin: auto;
-    text-align: center;
-}
+
 .bruhtext{
     text-align: center;
 }
