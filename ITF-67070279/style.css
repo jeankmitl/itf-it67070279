@@ -2,9 +2,15 @@
     font-family: 'Inter', Courier, monospace;
     font-size: medium;
     background-color: whitesmoke;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 0;
     margin: 0;
     height: 100vh;
@@ -21,7 +27,8 @@
     margin: auto;
     border-radius: 500px;
     border: 5px solid white;
-    box-shadow: 4px 4px 12px rgb(179, 179, 179);
+    -webkit-box-shadow: 4px 4px 12px rgb(179, 179, 179);
+            box-shadow: 4px 4px 12px rgb(179, 179, 179);
     margin-top: -310px;
 }
 
@@ -29,13 +36,23 @@
     width: 450px;
     height: 700px;
     background-color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: relative;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     border-radius: 75px;
-    box-shadow: 4px 4px 12px rgb(179, 179, 179);
+    -webkit-box-shadow: 4px 4px 12px rgb(179, 179, 179);
+            box-shadow: 4px 4px 12px rgb(179, 179, 179);
 }
 
 .notify{
@@ -43,21 +60,77 @@
     width: 30px;
     height: 30px;
     background-color: #FF5151;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items:  center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align:  center;
+        -ms-flex-align:  center;
+            align-items:  center;
     position: absolute;
     bottom: -3px;
     right: -3px;
     border-radius: 500px;
-    box-shadow: 2px 2px 5px rgb(179, 179, 179);
+    -webkit-box-shadow: 2px 2px 5px rgb(179, 179, 179);
+            box-shadow: 2px 2px 5px rgb(179, 179, 179);
 }
 
 .usernamebox{
     margin-bottom: 10px;
+    margin-right: 50px;
     text-align: center;
 }
 
 .bruhtext{
     text-align: center;
 }
+
+.input-wrapper {
+    position: relative;
+    width: 250px;
+    margin-top: 16px;
+    margin-left: 64px;
+  }
+  
+  .input-box {
+    font-size: 16px;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    color: #808080;
+    width: 100%;
+    background-color: transparent;
+    -webkit-transition: border-color 0.3s ease-in-out;
+    -o-transition: border-color 0.3s ease-in-out;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #08AEEA;
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  }
+  
+  .input-box:focus {
+    border-color: #08AEEA;
+    outline: none;
+  }
+  
+  .input-box:focus + .underline {
+    -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+            transform: scaleX(1);
+  }

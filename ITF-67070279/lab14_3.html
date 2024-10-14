@@ -20,13 +20,16 @@
             <h1 class="bruhtext" id="username">Username, hello!</h1>
         </div>
 
-        <div class="usernamebox">
-            <label>Set Username </label><input id="input" type="text"><button onclick="setName()">Confirm</button>
-        </div>
+        <div class="input-wrapper">
+            <input class="input-box" type="input" id='input' placeholder="Enter your text"><button onclick="setName()">Confirm</button>
+            <span class="underline"></span>
+          </div>
 
-        <div class="setprofilebox">
-            <label>Set Profile </label><input id="input-url" type="text"><button onclick="setting()">Confirm</button>
-        </div>
+
+          <div class="input-wrapper">
+            <input class="input-box" type="input-url" id='input-url' placeholder="Enter your text"><button onclick="setting()">Confirm</button>
+            <span class="underline"></span>
+          </div>
     </div>
 
     <label>Name:</label><input id='phone-name' type="text">
@@ -52,8 +55,7 @@
         const phoneData = [];
 
         function setName() {
-            
-            name.textContent = input.value + ', hello!';
+            name.innerHTML = "<b>" + input.value + "</b>" + ', hello!';
             input.value = '';
         }
 
