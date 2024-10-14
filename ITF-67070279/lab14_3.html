@@ -10,26 +10,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="body">
-    <div class="container">
-        <div id="profile-dis" class="profile">
-            <div class="notify">
-                <p>1</p>
+    <div class="backcontainer">
+        <div class="container">
+            <div id="profile-dis" class="profile">
+                <div class="notify">
+                    <p>1</p>
+                </div>
             </div>
+            <h1 class="bruhtext" id="username">Username, hello :></h1>
         </div>
-        <h1 class="bruhtext" id="username">Username, hello :></h1>
+
+        <div class="usernamebox">
+            <label>Set Username </label><input id="input" type="text"><button onclick="setName()">Confirm</button>
+        </div>
+
+        <div class="setprofilebox">
+            <label>Set Profile </label><input id="input-url" type="text"><button onclick="setting()">Confirm</button>
+        </div>
     </div>
 
-    <div class="usernamebox">
-        <label>Set Username </label><input id="input" type="text"><button onclick="setName()">Confirm</button>
-    </div>
-
-    <div class="setprofilebox">
-        <label>Set Profile </label><input id="input-url" type="text"><button onclick="setting()">Confirm</button>
-    </div>
-
-    <label>Name:</label><input type="text">
-    <label>Phone Number:</label><input type="text">
-    <button onclick='addRow()'>Add</button>
+    <label>Name:</label><input id='phone-name' type="text">
+    <label>Phone Number:</label><input id='phone-num' type="text">
+    <button on='addRow()'>Add</button>
     <button onclick="saveCSV()">Export</button>
     <table id="table">
         <tr>
@@ -44,38 +46,59 @@
         const profile = document.getElementById('profile-dis');
         const inputUrl = document.getElementById("input-url");
         const table = document.getElementById("table");
+        const phoneName = document.getElementById('phone-name')
+        const phoneNum = document.getElementById('phone-num')
 
-        function setName(){
+        const phoneData = [];
+
+        function setName() {
+            
             name.textContent = input.value + ', Hello!';
             input.value = '';
         }
 
-        function setting(){
+        function setting() {
+
             profile.style.backgroundImage = "url(" + inputUrl.value + ')';
         }
-        
-        function addRow(){
+
+        function addRow() {
+
             const row = document.createElement('tr');
             const cell1 = document.createElement('td');
             const cell2 = document.createElement('td');
-            cell1.textContent = 'Placeholder';
-            cell2.textContent = 'Placeholder';
+
+            cell1.textContent = phoneName.value;
+            cell2.textContent = phoneNum.value;
+
             row.appendChild(cell1);
             row.appendChild(cell2);
             table.appendChild(row);
+
+            phoneData.push([phoneName.value, phoneNum.value]);
+            phoneName.value = '';
+            phoneNum.value = '';
         }
+
         function saveCSV() {
-        const csvContent = phonenumber.map(row => row.join(",")).join("\n"); // Convert array to CSV string
-        const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-        const link = document.createElement("a");
-        const url = URL.createObjectURL(blob);
-        link.setAttribute("href", url);
-        link.setAttribute("download", "data.csv");
-        link.style.visibility = "hidden";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        };
+
+            const csvContent = phoneData.map(row => row.join(",")).join("\n");
+            const blob = new Blob([csvContent], {
+                type: "text/csv;charset=utf-8;"
+            });
+            const link = document.createElement("a");
+            const url = URL.createObjectURL(blob);
+
+            link.setAttribute("href", url);
+            link.setAttribute("download", "data.csv");
+            link.style.visibility = "hidden";
+
+            document.body.appendChild(link);
+
+            link.click();
+
+            document.body.removeChild(link);
+        }
     </script>
 </body>
 

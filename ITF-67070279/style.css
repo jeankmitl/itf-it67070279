@@ -2,31 +2,53 @@
     font-family: 'Martian Mono', Courier, monospace;
     font-size: medium;
     background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
 }
+
 .profile{
     width: 270px;
     height: 270px;
     background-image: url(https://th.bing.com/th/id/OIP.jQHKFUSwKe9JtsTRmnQk0wHaFj?rs=1&pid=ImgDetMain);
-    border-radius: 100%;
     background-size: cover;
     background-position: center;
     position: relative;
     margin: auto;
-    border: 10px solid white;
+    border-radius: 500px;
+    border: 5px solid white;
+    box-shadow: 2px 2px 5px rgb(179, 179, 179);
+}
+
+.backcontainer{
+    width: 450px;
+    height: 600px;
+    background-color: white;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
 }
 
 .notify{
+    color: white;
     width: 50px;
     height: 50px;
-    background-color: red;
-    border-radius: 50%;
+    background-color: #FF5151;
     display: flex;
     justify-content: center;
     align-items:  center;
     position: absolute;
     bottom: 5px;
     right: 5px;
-    border: 5px solid white;
+    border-radius: 500px;
+    box-shadow: 2px 2px 5px rgb(179, 179, 179);
 }
 
 .usernamebox{
