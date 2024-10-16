@@ -27,21 +27,24 @@
 
 
           <div class="input-wrapper">
-            <input class="input-box" type="input-url" id='input-url' placeholder="Enter image URL"><button class="button" onclick="setting()">Confirm</button>
+            <input class="input-box" type="input-url" id='input-url' placeholder="Enter image URL">
             <span class="underline"></span>
+            <button class="button" onclick="setting()">Confirm</button>
           </div>
     </div>
 
-    <label>Name:</label><input id='phone-name' type="text">
-    <label>Phone Number:</label><input id='phone-num' type="text">
-    <button onclick='addRow()'>Add</button>
-    <button onclick="saveCSV()">Export</button>
-    <table id="table">
-        <tr>
-            <th>name</th>
-            <th>phone</th>
-        </tr>
-    </table>
+    <div class="tablecontainer">
+        <label>Name:</label><input id='phone-name' type="text">
+        <label>Phone Number:</label><input id='phone-num' type="text">
+        <button onclick='addRow()'>Add</button>
+        <button onclick="saveCSV()">Export</button>
+        <table id="table">
+            <tr>
+                <th>name</th>
+                <th>phone</th>
+            </tr>
+        </table>
+    </div>
 
     <script>
         const name = document.getElementById("username");
